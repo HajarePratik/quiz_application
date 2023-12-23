@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "b4514fb5-d95c-4594-bfd6-8653d7e431b8",
+		"name": "Quiz App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Create  A Quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1010/quiz/create?category=Java&numQuestion=5&quizTitle=JQuiz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"quiz",
+								"create"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Java"
+								},
+								{
+									"key": "numQuestion",
+									"value": "5"
+								},
+								{
+									"key": "quizTitle",
+									"value": "JQuiz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Quiz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1010/quiz/get/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"quiz",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Quiz Answers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"4\",\r\n        \"response\": \"Collection\"\r\n    },\r\n    {\r\n        \"id\": \"10\",\r\n        \"response\": \"Polymorphism\"\r\n    },\r\n    {\r\n        \"id\": \"3\",\r\n        \"response\": \"try\"\r\n    },\r\n    {\r\n        \"id\": \"1\",\r\n        \"response\": \"final\"\r\n    },\r\n    {\r\n        \"id\": \"5\",\r\n        \"response\": \"To create a class-level variable or method\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/quiz/submit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"quiz",
+								"submit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "Add Question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"SQL\",\r\n    \"questionTitle\": \"Which SQL statement is used to delete rows from a database table?\",\r\n    \"option1\": \"REMOVE\",\r\n    \"option2\": \"DELETE\",\r\n    \"option3\": \"TRUNCATE\",\r\n    \"option4\": \"DROP\",\r\n    \"rightAnswer\": \"DELETE\",\r\n    \"difficultyLevel\": \"Intermediate\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/question/addQuestion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"question",
+								"addQuestion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Question",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"SQL\",\r\n    \"questionTitle\": \"What does SQL stand for?\",\r\n    \"option1\": \"Structured Query Language\",\r\n    \"option2\": \"Sequential Query Language\",\r\n    \"option3\": \"Structured Question Language\",\r\n    \"option4\": \"Systematic Query Language\",\r\n    \"rightAnswer\": \"Structured Query Language\",\r\n    \"difficultyLevel\": \"Easy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/question/updateQuestion/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"question",
+								"updateQuestion",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Question",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1010/question/deleteQuestion/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"question",
+								"deleteQuestion",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Question By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1010/question/category/Java",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"question",
+								"category",
+								"Java"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1010/question/getAllQuestion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"question",
+								"getAllQuestion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
